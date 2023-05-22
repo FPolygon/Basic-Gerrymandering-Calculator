@@ -1,0 +1,27 @@
+*********************************************************
+ourvector<i> stats:
+ # of vectors created:   6834
+ # of elements inserted: 13113
+ # of elements accessed: 11880
+*********************************************************
+*********************************************************
+ourvector<9ourvectorIiE> stats:
+ # of vectors created:   416
+ # of elements inserted: 3089
+ # of elements accessed: 2726
+*********************************************************
+*********************************************************
+ourvector<9ourvectorIS_IiEE> stats:
+ # of vectors created:   4
+ # of elements inserted: 200
+ # of elements accessed: 261
+*********************************************************
+*********************************************************
+ourvector<5State> stats:
+ # of vectors created:   56
+ # of elements inserted: 2800
+ # of elements accessed: 4354
+*********************************************************
+
+I tried to limit my use of vectors by creating a 3D vector to hold all other related vectors. Named districts in main(); line 370, this vector holds ‘n’ 2D vectors corresponding to each state and ‘n’ is the amount of states in the data set. These 2D ‘state’ vectors hold ‘m’ vectors for each district in the state where ‘m’ is the amount of districts in each state. These vectors are initialized in a loop in the loadDistrict() function on line 127 named stateData. These district vectors hold the district number and the democrat and republican vote numbers formatted as: {district number, democrat vote, republican vote}. These vectors are initialized in a for loop on line 137 for each set of three ‘words’ in the input line. This 3D vector was created to hold all the integer inputs from the input files. The other vector, called state in line 372 of main(), is a vector of state structs to hold the string name of each state and its corresponding eligible voter count. This vector was created to hold the string section of input on the load file as well as the eligible voter count due to the low need to access that data. Throughout the program, we pass by reference in order to minimize accessing the vector as well as remembering the index of the state in the state vector and passing that integer to other functions of the program so that we don’t have to research the entire vector again for the state. Since the state vector lines up with the 3D vector, this value can be reused to access both sets of elements without searching for the state.
+
